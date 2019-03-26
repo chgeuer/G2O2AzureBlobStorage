@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="G2OCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2014-06.2.4">
+  <Role name="G2OWorkerRole">
+    <Instances count="2" />
+    <ConfigurationSettings>
+      <Setting name="g2o_nonces" value="{'123456':'0123456789abcdef01234567'}" />
+      <Setting name="g2o_storage" value="[
+         {'Alias':'localdevstorage','ConnectionString':'UseDevelopmentStorage=true','Containers':['public','private','images']},
+         {'Alias':'cdndatastore01','ConnectionString':'DefaultEndpointsProtocol=https;AccountName=cdndatastore01;AccountKey=RnRIIL45Yjn9RNRzniIrUQE4f8dig1Pbr1rCFIW1R8okT2CSSiWXL1r4RC6rq5rITrMW7dchH242BzX29bPvpQ==','Containers':['public', 'private1']},
+         {'Alias':'cdndatastore02','ConnectionString':'DefaultEndpointsProtocol=https;AccountName=cdndatastore02;AccountKey=JeZiIVUM03Y+9+gsuPUU2E0qEfPagzh42Dll5gtNlY6+37Mb3n2BW1v0C62Xv1f3f8lJFi55Aa0EefH4NeVd7Q==','Containers':[]}
+       ]" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

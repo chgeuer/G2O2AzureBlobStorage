@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="G2OCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
+  <WorkerRole name="G2OWorkerRole" vmsize="Small">
+    <Runtime executionContext="elevated" />
+    <Startup>
+      <Task commandLine="SetupScripts\install.cmd" executionContext="elevated" taskType="simple" />
+    </Startup>
+    <ConfigurationSettings>
+      <Setting name="g2o_nonces" />
+      <Setting name="g2o_storage" />
+    </ConfigurationSettings>
+    <Endpoints>
+      <InputEndpoint name="http" protocol="http" port="80" />
+    </Endpoints>
+  </WorkerRole>
+</ServiceDefinition>
